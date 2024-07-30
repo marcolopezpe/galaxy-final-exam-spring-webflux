@@ -1,0 +1,8 @@
+version: "3.8"
+
+networks:
+  licenciapp-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.8.0.0/16
