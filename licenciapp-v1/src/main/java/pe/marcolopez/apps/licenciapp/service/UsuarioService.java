@@ -8,9 +8,11 @@ public interface UsuarioService {
 
   Flux<UsuarioDto> findAll();
 
+  Flux<UsuarioDto> findAllByFilter(String nombreUsuario, String email);
+
   Mono<UsuarioDto> findById(String id);
 
-  Mono<UsuarioDto> save(UsuarioDto usuarioDto);
+  Mono<UsuarioDto> create(UsuarioDto usuarioDto);
 
   Mono<UsuarioDto> update(String id, UsuarioDto usuarioDto);
 

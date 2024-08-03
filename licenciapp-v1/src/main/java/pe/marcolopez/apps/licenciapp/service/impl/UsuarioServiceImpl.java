@@ -25,6 +25,14 @@ public class UsuarioServiceImpl implements UsuarioService {
   }
 
   @Override
+  public Flux<UsuarioDto> findAllByFilter(String nombreUsuario, String email) {
+    return usuarioRepository
+        .findAllByFilter(nombreUsuario, email)
+        .map(usuarioMapper::docToDto)
+        .switchIfEmpty(Flux.empty());
+  }
+
+  @Override
   public Mono<UsuarioDto> findById(String id) {
     return usuarioRepository
         .findById(id)
@@ -33,17 +41,25 @@ public class UsuarioServiceImpl implements UsuarioService {
   }
 
   @Override
-  public Mono<UsuarioDto> save(UsuarioDto usuarioDto) {
-    return null;
+  public Mono<UsuarioDto> create(UsuarioDto usuarioDto) {
+    return usuarioRepository
+        .save(usuarioMapper.dtoToDoc(usuarioDto))
+        .map(usuarioMapper::docToDto)
+        .switchIfEmpty(Mono.empty());
   }
 
   @Override
   public Mono<UsuarioDto> update(String id, UsuarioDto usuarioDto) {
-    return null;
+    return usuarioRepository.findById(id)
+        .flatMap(usuarioDocument ->
+            usuarioRepository
+                .save(usuarioMapper.dtoToDocUpdate(usuarioDto, usuarioDocument))
+                .map(usuarioMapper::docToDto));
   }
 
   @Override
   public Mono<Void> delete(String id) {
-    return null;
+    return usuarioRepository
+        .deleteById(id);
   }
 }
