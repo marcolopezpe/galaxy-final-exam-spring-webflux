@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -42,5 +43,5 @@ public class ClienteDocument {
   private String recordNumero;
 
   @Field(name = "tramites")
-  private List<TramiteDocument> tramites;
+  private List<TramiteDocument> tramites = new ArrayList<>();
 }

@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.LocalDate;
-
 @Builder
 @Data
 @NoArgsConstructor
@@ -24,7 +22,7 @@ public class LicenciaDocument {
   private String tipoLicencia;
 
   @Field(name = "fecha_expedicion")
-  private LocalDate fechaExpedicion;
+  private String fechaExpedicion;
 
   @Field(name = "restricciones")
   private String restricciones;
