@@ -34,7 +34,7 @@ public class ClienteDocument {
   private String email;
 
   @Field(name = "licencia")
-  private LicenciaDocument licencia = new LicenciaDocument();
+  private LicenciaDocument licencia;
 
   @Field(name = "puntos_acumulados")
   private String puntosAcumulados;

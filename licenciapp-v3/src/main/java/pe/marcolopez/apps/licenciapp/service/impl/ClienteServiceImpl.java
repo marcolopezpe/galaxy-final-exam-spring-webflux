@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
 import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
 import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
 import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
 import pe.marcolopez.apps.licenciapp.mapper.ClienteMapper;
 import pe.marcolopez.apps.licenciapp.repository.ClienteRepository;
@@ -66,14 +65,5 @@ public class ClienteServiceImpl implements ClienteService {
           clienteRepository
               .save(clienteMapper.tramiteDtoToDoc(clienteDocument, tramiteCreateDto))
               .map(clienteMapper::docToDto));
-  }
-
-  @Override
-  public Mono<ClienteQueryDto> updateLicencia(String clienteId, ClienteUpdateLicenciaDto clienteUpdateLicenciaDto) {
-    return clienteRepository.findById(clienteId)
-        .flatMap(clienteDocument ->
-            clienteRepository
-                .save(clienteMapper.licenciaUpdateDtoToDoc(clienteDocument, clienteDocument, clienteUpdateLicenciaDto))
-                .map(clienteMapper::docToDto));
   }
 }

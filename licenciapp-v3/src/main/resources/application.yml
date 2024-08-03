@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LicenciApp
+  data:
+    mongodb:
+      database: db_licenciapp
+      username: root
+      password: mongodbpass1
+      port: 27017
+      authentication-database: admin
+      auto-index-creation: true
+  threads:
+    virtual:
+      enabled: true
+logging:
+  level:
+    pe.marcolopez: warn
+    org.springframework.data.mongodb.core.ReactiveMongoTemplate: debug
