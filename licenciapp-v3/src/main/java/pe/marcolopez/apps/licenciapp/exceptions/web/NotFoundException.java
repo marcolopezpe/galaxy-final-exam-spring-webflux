@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.exceptions;
+package pe.marcolopez.apps.licenciapp.exceptions.web;
 
 public class NotFoundException extends RuntimeException {
 

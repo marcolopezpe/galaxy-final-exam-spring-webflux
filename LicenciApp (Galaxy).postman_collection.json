@@ -1,0 +1,669 @@
+{
+	"info": {
+		"_postman_id": "60e77440-ec5c-472c-aba5-98ac2ff1443e",
+		"name": "LicenciApp (Galaxy)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6549145"
+	},
+	"item": [
+		{
+			"name": "USUARIOS V1",
+			"item": [
+				{
+					"name": "GET USUARIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USUARIOS BY FILTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/filter?nombreUsuario=E&email=EE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "nombreUsuario",
+									"value": "E"
+								},
+								{
+									"key": "email",
+									"value": "EE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USUARIO BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/66a7f4b3d57f6757b3a6f0dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"66a7f4b3d57f6757b3a6f0dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE USUARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"ESPINOZA\",\n\t\"nombres\": \"EVELY\",\n\t\"nombreUsuario\": \"EESPINOZA\",\n\t\"email\": \"EESPINOZA@OUTLOOK.COM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE USUARIO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"ESPINOZA\",\n\t\"nombres\": \"EVELY\",\n\t\"nombreUsuario\": \"EVY\",\n\t\"email\": \"EVY@GMAIL.COM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/66adc15230026950bbda3e41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"66adc15230026950bbda3e41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USUARIO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/66adc15230026950bbda3e41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"66adc15230026950bbda3e41"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIOS V2",
+			"item": [
+				{
+					"name": "GET USUARIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USUARIOS BY FILTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/usuarios/filter?nombreUsuario=E&email=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"usuarios",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "nombreUsuario",
+									"value": "E"
+								},
+								{
+									"key": "email",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USUARIO BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/usuarios/66a7f4b3d57f6757b3a6f0dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"usuarios",
+								"66a7f4b3d57f6757b3a6f0dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE USUARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"MEZA\",\n\t\"nombres\": \"OSSCAR\",\n\t\"nombreUsuario\": \"OMEZA\",\n\t\"email\": \"OMEZA2@OUTLOOK.COM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE USUARIO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"MEZA QUISPE\",\n\t\"nombres\": \"OSCAR ANTONIO\",\n\t\"nombreUsuario\": \"OAMEZA\",\n\t\"email\": \"OMEZA@gmail.COM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/66adf104accd340a6eac7f99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"66adf104accd340a6eac7f99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USUARIO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios/66adf104accd340a6eac7f99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios",
+								"66adf104accd340a6eac7f99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLIENTES V1",
+			"item": [
+				{
+					"name": "GET CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLIENTE BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/66a7f4b3d57f6757b3a6f0de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"66a7f4b3d57f6757b3a6f0de"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"PEREZ\",\n\t\"nombres\": \"JUAN\",\n\t\"numeroDocumento\": \"48345672\",\n\t\"email\": \"jperez@gmail.com\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"342345242024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENTE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"PEREZ\",\n\t\"nombres\": \"JUAN\",\n\t\"numeroDocumento\": \"48345672\",\n\t\"email\": \"jperez@gmail.com\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"342345242024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/66add3abdd80823a72b4a780",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"66add3abdd80823a72b4a780"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLIENTE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/66adc15230026950bbda3e41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"66adc15230026950bbda3e41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD TRAMITE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numeroLicencia\": \"Q42091234\",\n\t\"claseCategoria\": \"A IIa\",\n\t\"tramite\": \"Revalidación\",\n\t\"fechaExpedicion\": \"19/09/2010\",\n\t\"fechaEmision\": \"08/08/2025\",\n\t\"fechaRevalidacion\": \"08/01/2030\",\n\t\"tipoLicencia\": \"FISICA\",\n\t\"restricciones\": \"LENTES\",\n\t\"centroEmision\": \"MTC - LINCE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/clientes/66add3abdd80823a72b4a780/add-tramite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"clientes",
+								"66add3abdd80823a72b4a780",
+								"add-tramite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLIENTES V2",
+			"item": [
+				{
+					"name": "GET CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLIENTE BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes/66add3abdd80823a72b4a780",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes",
+								"66add3abdd80823a72b4a780"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"LOPEZ CAMACHO\",\n\t\"nombres\": \"MARCO\",\n\t\"numeroDocumento\": \"46981237\",\n\t\"email\": \"marcolopez@gmail.com\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"3422323242024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENTE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apellidos\": \"LOPEZ CAMACHO\",\n\t\"nombres\": \"MARCO\",\n\t\"numeroDocumento\": \"46981237\",\n\t\"email\": \"MARCOLOPEZPE@OUTLOOK.COM\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"3422323242024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes/66adf4f32872a8565dbe591b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes",
+								"66adf4f32872a8565dbe591b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLIENTE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes/66add3abdd80823a72b4a780",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes",
+								"66add3abdd80823a72b4a780"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD TRAMITE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numeroLicencia\": \"Q46981237\",\n\t\"claseCategoria\": \"A IIa\",\n\t\"tramite\": \"Revalidación\",\n\t\"fechaExpedicion\": \"19/09/2025\",\n\t\"fechaEmision\": \"08/08/2025\",\n\t\"fechaRevalidacion\": \"08/01/2035\",\n\t\"tipoLicencia\": \"FISICA\",\n\t\"restricciones\": \"LENTES\",\n\t\"centroEmision\": \"MTC - LINCE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes/66adf4f32872a8565dbe591b/add-tramite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes",
+								"66adf4f32872a8565dbe591b",
+								"add-tramite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE LICENCIA",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"puntosAcumulados\": \"100\",\n\t\"licencia\": {\n\t\t\"tipoLicencia\": \"DIGITAL WEB\",\n\t\t\"restricciones\": \"CON LENTES OSCUROS\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/clientes/66adf4f32872a8565dbe591b/update-licencia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"clientes",
+								"66adf4f32872a8565dbe591b",
+								"update-licencia"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import pe.marcolopez.apps.licenciapp.dto.UsuarioDto;
+import pe.marcolopez.apps.licenciapp.dto.validator.ObjectValidator;
 import pe.marcolopez.apps.licenciapp.service.UsuarioService;
 import reactor.core.publisher.Mono;
 
@@ -21,6 +22,7 @@ public class UsuarioHandler {
   private final Mono<ServerResponse> response404 = ServerResponse.notFound().build();
   private final Mono<ServerResponse> response400 = ServerResponse.badRequest().build();
   private final UsuarioService usuarioService;
+  private final ObjectValidator validator;
 
   // GET ALL
   public Mono<ServerResponse> getAllUsuarios(ServerRequest request) {
@@ -57,6 +59,7 @@ public class UsuarioHandler {
     Mono<UsuarioDto> usuarioDtoMono = request.bodyToMono(UsuarioDto.class);
 
     return usuarioDtoMono
+        .doOnNext(validator::validate)
         .flatMap(usuarioDto -> usuarioService.create(usuarioDto)
             .flatMap(usuarioDtoSaved -> ServerResponse.created(URI.create("/v2/usuarios/".concat(usuarioDtoSaved.id())))
                 .body(fromValue(usuarioDtoSaved))))
@@ -69,6 +72,7 @@ public class UsuarioHandler {
     String id = request.pathVariable("id");
 
     return usuarioDtoMono
+        .doOnNext(validator::validate)
         .flatMap(usuarioDto -> usuarioService.update(id, usuarioDto)
             .flatMap(usuarioDtoUpdated -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)

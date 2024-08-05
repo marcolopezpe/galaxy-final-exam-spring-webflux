@@ -26,6 +26,8 @@ public class ClienteRouter {
         .andRoute(DELETE("/v2/clientes/{id}"),
             clienteHandler::delete)
         .andRoute(PATCH("/v2/clientes/{id}/add-tramite"),
-            clienteHandler::addTramiteToCliente);
+            clienteHandler::addTramiteToCliente)
+        .andRoute(PATCH("/v2/clientes/{id}/update-licencia"),
+            clienteHandler::updateLicenciaToCliente);
   }
 }

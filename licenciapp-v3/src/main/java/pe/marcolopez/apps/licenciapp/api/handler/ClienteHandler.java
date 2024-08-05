@@ -8,7 +8,9 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
 import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
 import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
 import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.dto.validator.ObjectValidator;
 import pe.marcolopez.apps.licenciapp.service.ClienteService;
 import reactor.core.publisher.Mono;
 
@@ -23,6 +25,7 @@ public class ClienteHandler {
   private final Mono<ServerResponse> response404 = ServerResponse.notFound().build();
   private final Mono<ServerResponse> response400 = ServerResponse.badRequest().build();
   private final ClienteService clienteService;
+  private final ObjectValidator validator;
 
   // GET ALL CLIENTES
   public Mono<ServerResponse> getAllClientes(ServerRequest request) {
@@ -48,6 +51,7 @@ public class ClienteHandler {
     Mono<ClienteCreateDto> clienteQueryDtoMono = request.bodyToMono(ClienteCreateDto.class);
 
     return clienteQueryDtoMono
+        .doOnNext(validator::validate)
         .flatMap(clienteCreateDto -> clienteService.create(clienteCreateDto)
             .flatMap(clienteQueryDto -> ServerResponse.created(URI.create("/v2/clientes/".concat(clienteQueryDto.id())))
                 .body(fromValue(clienteQueryDto))))
@@ -60,6 +64,7 @@ public class ClienteHandler {
     String id = request.pathVariable("id");
 
     return usuarioDtoMono
+        .doOnNext(validator::validate)
         .flatMap(clienteUpdateDto -> clienteService.update(id, clienteUpdateDto)
             .flatMap(clienteQueryDto -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
@@ -83,7 +88,22 @@ public class ClienteHandler {
     String id = request.pathVariable("id");
 
     return tramiteCreateDtoMono
+        .doOnNext(validator::validate)
         .flatMap(tramiteCreateDto -> clienteService.addTramite(id, tramiteCreateDto)
+            .flatMap(clienteQueryDto -> ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(fromValue(clienteQueryDto))))
+        .switchIfEmpty(response404);
+  }
+
+  // UPDATE LICENCIA
+  public Mono<ServerResponse> updateLicenciaToCliente(ServerRequest request) {
+    String id = request.pathVariable("id");
+    Mono<ClienteUpdateLicenciaDto> clienteUpdateLicenciaDtoMono = request.bodyToMono(ClienteUpdateLicenciaDto.class);
+
+    return clienteUpdateLicenciaDtoMono
+        .doOnNext(validator::validate)
+        .flatMap(clienteUpdateLicenciaDto -> clienteService.updateLicencia(id, clienteUpdateLicenciaDto)
             .flatMap(clienteQueryDto -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(fromValue(clienteQueryDto))))
