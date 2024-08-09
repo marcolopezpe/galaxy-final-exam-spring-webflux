@@ -11,11 +11,11 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
-	<groupId>pe.marcolopez.apps</groupId>
+  <groupId>pe.marcolopez.apps</groupId>
   <artifactId>licenciapp-v3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-	<name>LicenciApp</name>
+  <name>LicenciApp</name>
   <description>App for de final project to Galaxy Training institute</description>
   <url/>
 
@@ -23,7 +23,7 @@
     <license/>
   </licenses>
 
-	<developers>
+  <developers>
     <developer>
       <name>Marco Lopez</name>
       <email>marcolopezpe@outlook.com</email>
@@ -32,19 +32,21 @@
     </developer>
   </developers>
 
-	<scm>
+  <scm>
     <connection/>
     <developerConnection/>
     <tag/>
     <url/>
   </scm>
 
-	<properties>
+  <properties>
     <java.version>21</java.version>
     <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+    <guava.version>31.1-jre</guava.version>
+    <springdoc.openapi.version>2.0.2</springdoc.openapi.version>
   </properties>
 
-	<dependencies>
+  <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
@@ -70,7 +72,12 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>31.1-jre</version>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+      <version>${springdoc.openapi.version}</version>
     </dependency>
 
     <dependency>

@@ -14,6 +14,12 @@ spring:
   threads:
     virtual:
       enabled: true
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+  swagger-ui:
+    path: /swagger-doc/swagger-ui.html
 logging:
   level:
     pe.marcolopez: warn
