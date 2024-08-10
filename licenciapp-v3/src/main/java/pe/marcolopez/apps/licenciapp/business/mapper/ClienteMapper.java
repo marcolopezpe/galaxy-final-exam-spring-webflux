@@ -1,16 +1,16 @@
-package pe.marcolopez.apps.licenciapp.mapper;
+package pe.marcolopez.apps.licenciapp.business.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Named;
-import pe.marcolopez.apps.licenciapp.document.ClienteDocument;
-import pe.marcolopez.apps.licenciapp.document.TramiteDocument;
-import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
-import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteQueryDto;
+import pe.marcolopez.apps.licenciapp.business.document.ClienteDocument;
+import pe.marcolopez.apps.licenciapp.business.document.TramiteDocument;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateLicenciaDto;
+import pe.marcolopez.apps.licenciapp.business.dto.TramiteCreateDto;
 
 import java.util.List;
 

@@ -1,17 +1,17 @@
-package pe.marcolopez.apps.licenciapp.api.handler;
+package pe.marcolopez.apps.licenciapp.business.api.handler;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
-import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.validator.ObjectValidator;
-import pe.marcolopez.apps.licenciapp.service.ClienteService;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteQueryDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateLicenciaDto;
+import pe.marcolopez.apps.licenciapp.business.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.commons.dto.validator.ObjectValidator;
+import pe.marcolopez.apps.licenciapp.business.service.ClienteService;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;

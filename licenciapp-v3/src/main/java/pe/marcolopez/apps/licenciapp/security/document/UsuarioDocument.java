@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.business.document;
+package pe.marcolopez.apps.licenciapp.security.document;
 
 import java.io.Serializable;
 import org.springframework.data.annotation.Id;
@@ -33,4 +33,10 @@ public class UsuarioDocument implements Serializable {
 
   @Field(name = "email")
   private String email;
+
+  @Field(name = "roles")
+  private String[] roles;
+
+  @Field(name = "estado")
+  private String estado;
 }

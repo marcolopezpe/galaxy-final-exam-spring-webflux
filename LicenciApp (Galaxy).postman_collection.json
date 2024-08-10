@@ -169,6 +169,16 @@
 				{
 					"name": "GET USUARIOS",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ7XCJpZFwiOlwiNjZiNWRhMGVjZGM0NjBhNjY1MDk1NTE0XCIsXCJ1c3VhcmlvXCI6XCJBRE1JTlwifSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNzIzMTk0NDUzLCJleHAiOjE3MjMyMDE2NTN9.JYZGQuXnJjkN7OAlK4YqEHTQqBwMG3iJdLuraFxvnLS2khkt8LfTfpXZexJTUj5o",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -241,11 +251,28 @@
 				{
 					"name": "CREATE USUARIO",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ7XCJpZFwiOlwiNjZiNWMzODEyNmVlNzhlY2MyZTRkMzIzXCIsXCJ1c3VhcmlvXCI6XCJBRE1JTlwifSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNzIzMTkxMTYyLCJleHAiOjE3MjMxOTgzNjJ9.3_jW_H4h5h6JKQ-5Nvo9LDpYm8LKAh3WCCb3nZhq-KYANkgUFBdVJB9i37iQmQi4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ7XCJpZFwiOlwiNjZiNWMzODEyNmVlNzhlY2MyZTRkMzIzXCIsXCJ1c3VhcmlvXCI6XCJBRE1JTlwifSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNzIzMTg5NTUxLCJleHAiOjE3MjMxOTY3NTF9.QjM7HMjt5DS8rwuND-YUj-cO2XSLEyIgh-ylLn-sT7sNAK2N6QF3SZItYjgp5m_w",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"apellidos\": \"MEZA\",\n\t\"nombres\": \"OSSCAR\",\n\t\"nombreUsuario\": \"OMEZA\",\n\t\"email\": \"OMEZA2@OUTLOOK.COM\"\n}",
+							"raw": "{\n\t\"apellidos\": \"ESPINOZA\",\n\t\"nombres\": \"EVELY\",\n\t\"nombreUsuario\": \"EVELYESPINOZA2\",\n\t\"email\": \"EESPINOZA@OUTLOOK.COM\",\n\t\"contrasena\": \"12345678\",\n\t\"roles\": [\"ADMINISTRACION\"],\n\t\"estado\": \"BLOQUEADO\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -270,11 +297,21 @@
 				{
 					"name": "UPDATE USUARIO",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ7XCJpZFwiOlwiNjZiNWRhMGVjZGM0NjBhNjY1MDk1NTE0XCIsXCJ1c3VhcmlvXCI6XCJBRE1JTlwifSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiaWF0IjoxNzIzMTk0NDUzLCJleHAiOjE3MjMyMDE2NTN9.JYZGQuXnJjkN7OAlK4YqEHTQqBwMG3iJdLuraFxvnLS2khkt8LfTfpXZexJTUj5o",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"apellidos\": \"MEZA QUISPE\",\n\t\"nombres\": \"OSCAR ANTONIO\",\n\t\"nombreUsuario\": \"OAMEZA\",\n\t\"email\": \"OMEZA@gmail.COM\"\n}",
+							"raw": "{\n\t\"apellidos\": \"ESPINOZA\",\n\t\"nombres\": \"EVELY\",\n\t\"nombreUsuario\": \"EVELYESPINOZA2\",\n\t\"email\": \"EESPINOZA@OUTLOOK.COM\",\n\t\"contrasena\": \"123456789\",\n\t\"roles\": [\n\t\t\"ADMINISTRACION\"\n\t],\n\t\"estado\": \"ACTIVO\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -282,16 +319,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/v1/usuarios/66adf104accd340a6eac7f99",
+							"raw": "http://localhost:8080/v2/usuarios/66b5db10816e744aae8fbe41",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"v1",
+								"v2",
 								"usuarios",
-								"66adf104accd340a6eac7f99"
+								"66b5db10816e744aae8fbe41"
 							]
 						}
 					},
@@ -528,7 +565,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"apellidos\": \"LOPEZ CAMACHO\",\n\t\"nombres\": \"MARCO\",\n\t\"numeroDocumento\": \"46981237\",\n\t\"email\": \"marcolopez@gmail.com\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"3422323242024\"\n}",
+							"raw": "{\n\t\"apellidos\": \"SMITH\",\n\t\"nombres\": \"STEVE\",\n\t\"numeroDocumento\": \"46981237\",\n\t\"email\": \"SMITH_STEVE@OUTLOOK.COM\",\n\t\"puntosAcumulados\": \"0\",\n\t\"recordNumero\": \"3422323242024\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -664,6 +701,36 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "LOGIN V2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"usuario\": \"evelyespinoza2\",\n\t\"contrasena\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v2/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

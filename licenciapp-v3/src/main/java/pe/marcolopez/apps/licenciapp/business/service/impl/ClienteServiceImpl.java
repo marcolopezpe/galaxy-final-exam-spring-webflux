@@ -1,15 +1,15 @@
-package pe.marcolopez.apps.licenciapp.service.impl;
+package pe.marcolopez.apps.licenciapp.business.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
-import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
-import pe.marcolopez.apps.licenciapp.mapper.ClienteMapper;
-import pe.marcolopez.apps.licenciapp.repository.ClienteRepository;
-import pe.marcolopez.apps.licenciapp.service.ClienteService;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteQueryDto;
+import pe.marcolopez.apps.licenciapp.business.repository.ClienteRepository;
+import pe.marcolopez.apps.licenciapp.business.service.ClienteService;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateLicenciaDto;
+import pe.marcolopez.apps.licenciapp.business.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.mapper.ClienteMapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

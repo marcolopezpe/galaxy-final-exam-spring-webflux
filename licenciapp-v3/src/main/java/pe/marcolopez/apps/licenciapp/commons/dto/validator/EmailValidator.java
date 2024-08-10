@@ -1,8 +1,8 @@
-package pe.marcolopez.apps.licenciapp.business.dto.validator;
+package pe.marcolopez.apps.licenciapp.commons.dto.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import pe.marcolopez.apps.licenciapp.business.dto.constraint.EmailValid;
+import pe.marcolopez.apps.licenciapp.commons.dto.constraint.EmailValid;
 
 import java.util.regex.Pattern;
 

@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.dto;
+package pe.marcolopez.apps.licenciapp.business.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.configuration;
+package pe.marcolopez.apps.licenciapp.business.configuration;
 
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.context.annotation.Bean;

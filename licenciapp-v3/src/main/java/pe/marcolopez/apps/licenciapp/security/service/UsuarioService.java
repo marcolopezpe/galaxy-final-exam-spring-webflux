@@ -1,5 +1,7 @@
-package pe.marcolopez.apps.licenciapp.business.service;
+package pe.marcolopez.apps.licenciapp.security.service;
 
+import pe.marcolopez.apps.licenciapp.security.dto.LoginRequestDto;
+import pe.marcolopez.apps.licenciapp.security.dto.LoginResponseDto;
 import pe.marcolopez.apps.licenciapp.security.dto.UsuarioDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -17,4 +19,6 @@ public interface UsuarioService {
   Mono<UsuarioDto> update(String id, UsuarioDto usuarioDto);
 
   Mono<Void> delete(String id);
+
+  Mono<LoginResponseDto> login(LoginRequestDto loginRequestDto);
 }

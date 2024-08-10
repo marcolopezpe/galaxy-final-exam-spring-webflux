@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.business.api.router;
+package pe.marcolopez.apps.licenciapp.security.api.router;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pe.marcolopez.apps.licenciapp.business.api.handler.UsuarioHandler;
+import pe.marcolopez.apps.licenciapp.security.api.handler.UsuarioHandler;
 import pe.marcolopez.apps.licenciapp.security.dto.UsuarioDto;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
@@ -103,10 +103,12 @@ public class UsuarioRouter {
               requestBody = @RequestBody(content = @Content(schema = @Schema(implementation = UsuarioDto.class),
                   examples = @ExampleObject(value = """
                         {
-                        	"apellidos": "MEZA",
-                        	"nombres": "OSSCAR",
-                        	"nombreUsuario": "OMEZA",
-                        	"email": "OMEZA2@OUTLOOK.COM"
+                        	"apellidos": "QUISPE",
+                        	"nombres": "DIEGO",
+                        	"nombreUsuario": "OQUISPE",
+                        	"email": "OQUISPE@OUTLOOK.COM",
+                        	"roles": ["ADMIN", "USER"],
+                        	"estado": "ACTIVO"
                         }
                       """))),
               description = "Crea un Usuario.",
@@ -134,10 +136,12 @@ public class UsuarioRouter {
               requestBody = @RequestBody(content = @Content(schema = @Schema(implementation = UsuarioDto.class),
                   examples = @ExampleObject(value = """
                         {
-                        	"apellidos": "MEZA QUISPE",
-                        	"nombres": "OSCAR ANTONIO",
-                        	"nombreUsuario": "OAMEZA",
-                        	"email": "OMEZA@gmail.COM"
+                        	"apellidos": "QUISPE CUADAROS",
+                        	"nombres": "DIEGO ORLANDO",
+                        	"nombreUsuario": "OQUISPE",
+                        	"email": "OQUISPE@OUTLOOK.COM",
+                        	"roles": ["ADMIN", "USER"],
+                        	"estado": "ACTIVO"
                         }
                       """))),
               description = "Actualiza un Usuario.",

@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.exceptions.web;
+package pe.marcolopez.apps.licenciapp.business.exceptions.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

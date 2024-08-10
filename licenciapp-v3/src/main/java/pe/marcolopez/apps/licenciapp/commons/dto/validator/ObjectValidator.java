@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.business.dto.validator;
+package pe.marcolopez.apps.licenciapp.commons.dto.validator;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;

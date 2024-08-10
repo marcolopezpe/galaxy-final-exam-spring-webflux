@@ -1,17 +1,17 @@
-package pe.marcolopez.apps.licenciapp.business.dto.constraint;
+package pe.marcolopez.apps.licenciapp.commons.dto.constraint;
 
 import static java.lang.annotation.ElementType.*;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import jakarta.validation.constraints.NotEmpty;
-import pe.marcolopez.apps.licenciapp.business.dto.validator.EmailValidator;
+import pe.marcolopez.apps.licenciapp.commons.dto.validator.EmailValidator;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@NotEmpty
+@NotEmpty(message = "Campo obligatorio")
 @Target({METHOD, FIELD, ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = EmailValidator.class)

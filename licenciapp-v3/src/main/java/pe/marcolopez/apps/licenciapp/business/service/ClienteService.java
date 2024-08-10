@@ -1,10 +1,10 @@
-package pe.marcolopez.apps.licenciapp.service;
+package pe.marcolopez.apps.licenciapp.business.service;
 
-import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateLicenciaDto;
-import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteQueryDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateLicenciaDto;
+import pe.marcolopez.apps.licenciapp.business.dto.TramiteCreateDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

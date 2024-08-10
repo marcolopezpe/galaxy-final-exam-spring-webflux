@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.business.exceptions.handler;
+package pe.marcolopez.apps.licenciapp.commons.exceptions.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.WebProperties;
@@ -19,7 +19,10 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import pe.marcolopez.apps.licenciapp.business.exceptions.web.NotFoundException;
 import pe.marcolopez.apps.licenciapp.business.exceptions.web.ObjectValidationException;
+import pe.marcolopez.apps.licenciapp.commons.exceptions.web.TokenNotFoundException;
 import reactor.core.publisher.Mono;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -49,14 +52,13 @@ public class GlobalCustomExceptionHandler extends AbstractErrorWebExceptionHandl
     Throwable throwable = getError(request);
     HttpStatus httpStatus = determineHttpStatus(throwable);
     errorPropertiesMap.put("status", httpStatus.value());
-    errorPropertiesMap.put("error", httpStatus.name());
-    errorPropertiesMap.remove("message");
+    errorPropertiesMap.remove("error");
 
-    if (throwable instanceof ObjectValidationException ove) {
-      if (!Objects.isNull(ove.getCause())) {
-        errorPropertiesMap.put("message", ove.getCause().getMessage());
-      } else {
-        errorPropertiesMap.put("message", ove.getMessage());
+    if (throwable instanceof CustomValidationException cve) {
+      Map<String, String> errors = new HashMap<>();
+      if (cve.getErrors() != null) {
+        cve.getErrors().getFieldErrors().forEach(e -> errors.put(e.getField(), e.getDefaultMessage()));
+        errorPropertiesMap.put("message", errors);
       }
     }
 
@@ -72,6 +74,8 @@ public class GlobalCustomExceptionHandler extends AbstractErrorWebExceptionHandl
       return HttpStatus.BAD_REQUEST;
     } else if (throwable instanceof NotFoundException) {
       return HttpStatus.NOT_FOUND;
+    } else if (throwable instanceof TokenNotFoundException) {
+      return HttpStatus.BAD_REQUEST;
     } else {
       return HttpStatus.INTERNAL_SERVER_ERROR;
     }

@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.document;
+package pe.marcolopez.apps.licenciapp.business.document;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

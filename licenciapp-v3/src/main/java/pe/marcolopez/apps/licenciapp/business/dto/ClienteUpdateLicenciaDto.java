@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.dto;
+package pe.marcolopez.apps.licenciapp.business.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;

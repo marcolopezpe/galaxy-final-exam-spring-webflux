@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.api.router;
+package pe.marcolopez.apps.licenciapp.business.api.router;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pe.marcolopez.apps.licenciapp.api.handler.ClienteHandler;
-import pe.marcolopez.apps.licenciapp.dto.ClienteCreateDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteQueryDto;
-import pe.marcolopez.apps.licenciapp.dto.ClienteUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.LicenciaUpdateDto;
-import pe.marcolopez.apps.licenciapp.dto.TramiteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.api.handler.ClienteHandler;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteQueryDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteCreateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.ClienteUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.LicenciaUpdateDto;
+import pe.marcolopez.apps.licenciapp.business.dto.TramiteCreateDto;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 

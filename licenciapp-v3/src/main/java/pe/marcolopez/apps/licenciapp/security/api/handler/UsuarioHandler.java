@@ -1,4 +1,4 @@
-package pe.marcolopez.apps.licenciapp.business.api.handler;
+package pe.marcolopez.apps.licenciapp.security.api.handler;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import pe.marcolopez.apps.licenciapp.security.dto.UsuarioDto;
-import pe.marcolopez.apps.licenciapp.business.dto.validator.ObjectValidator;
-import pe.marcolopez.apps.licenciapp.business.service.UsuarioService;
+import pe.marcolopez.apps.licenciapp.commons.dto.validator.ObjectValidator;
+import pe.marcolopez.apps.licenciapp.security.service.UsuarioService;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;

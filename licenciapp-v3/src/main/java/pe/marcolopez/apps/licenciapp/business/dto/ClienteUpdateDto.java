@@ -1,11 +1,11 @@
-package pe.marcolopez.apps.licenciapp.dto;
+package pe.marcolopez.apps.licenciapp.business.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
-import pe.marcolopez.apps.licenciapp.dto.constraint.EmailValid;
+import pe.marcolopez.apps.licenciapp.commons.dto.constraint.EmailValid;
 
 @Builder
 public record ClienteUpdateDto(@Size(min = 2, max = 250, message = "Los Apellidos deben ser entre 2 y 250 caracteres")
@@ -17,9 +17,9 @@ public record ClienteUpdateDto(@Size(min = 2, max = 250, message = "Los Apellido
                                @EmailValid(message = "Formato de Email incorrecto")
                                String email,
                                @Min(value = 0, message = "El valor minimo es 0")
-                               @Pattern(regexp= "\\d{6}", message = "Los Puntos Acumulados deben ser numericos")
+                               @Pattern(regexp= "[0-9]+", message = "Los Puntos Acumulados deben ser numericos")
                                String puntosAcumulados,
                                @NotEmpty(message = "Campo obligatorio")
-                               @Pattern(regexp= "\\d{6}", message = "El Record Numero solo es numerico")
+                               @Pattern(regexp= "[0-9]+", message = "El Record Numero solo es numerico")
                                String recordNumero) {
 }
